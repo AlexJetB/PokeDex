@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pokedex</title>
+    <link rel="stylesheet" type="text/css" href="css/pokemon-font-1.8.1/css/pokeStyle.css">
+  </head>
+  <body onload="init()">
+    <div class="flex">
+      <div id="outCircle" class="circle">
+        <div id="inCircle" class="circle">
+        </div>
+      </div>
+      <div>
+        <form id="searchForm" name="searchForm">
+          <span>Search: </span><input type="text" name="pokeName">
+          <select id="typeSelect" onchange="return showType(this.value)">
+            <option value=''>Select Type</option>
+          </select>
+        </form>
+      </div>
+    </div>
+    <p style="color:white; font-size: 40px">Pokemon:</p>
+    <ul id='list'>
+    </ul>
+    <div class="flexCenter">
+      <button id="prevButton">Prev</button>
+      <button id="nextButton">Next</button>
+    </div>
+  </body>
+  <script type="text/javascript" src="js/pokeApi.js">
+  </script>
+</html>

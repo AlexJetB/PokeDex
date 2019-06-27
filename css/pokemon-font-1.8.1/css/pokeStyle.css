@@ -1,0 +1,118 @@
+@font-face {
+  font-family: 'pokemon-font';
+  src: url('../fonts/pokemon-font.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/pokemon-font.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/pokemon-font.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/pokemon-font.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/pokemon-font.ttf')  format('truetype') /* Safari, Android, iOS */
+  /* There is no SVG version of this font due to support being dropped in SVG 2 */
+}
+
+@media only screen {
+  body {
+    font-family: 'pokemon-font', monospace;
+    -webkit-font-smoothing: none;
+    font-smooth: never;
+    font-size: 10px;
+    background-color: #f22613;
+  }
+  #list {
+    list-style: none;
+    background-color: #d2d7d3;
+    margin: auto;
+    height: 70%;
+    width: 80%;
+    border: 10px solid black;
+    border-radius: 10px;
+  }
+  #list > li {
+    padding: 0.5rem 0 0.5rem 0;
+    font-size: 30px; /*has to be in pixels due to font limitations*/
+    width: 90%;
+  }
+  #list > li:active {
+    background-color: #2e3131;
+    color: #d2d7d3;
+  }
+  input, button, select {
+    font-family: 'pokemon-font', monospace;
+    width:70%;
+    font-size: 30px;
+  }
+  option {
+    font-size: 10px;
+    height: 10px;
+  }
+  .flex, p {
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2em;
+    width: 80%;
+  }
+  p {
+    margin-left: 2em;
+  }
+  .flexCenter {
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: auto;
+    margin-top: 2em;
+    width: 80%;
+  }
+  .flexCenter > button {
+    font-family: 'pokemon-font', monospace;
+    padding: 1em;
+    background-color: #2e3131;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    width: 40%;
+  }
+  .flexCenter > button:active {
+    background-color: #fff;
+    color: #2e3131;
+  }
+  .circle {
+    border-radius: 50%;
+  }
+  /* Draw with Canvas.... */
+  #outCircle {
+    left: 2em;
+    height: 95px;
+    width: 200px;
+    margin-right: 50px; margin-left: 50px;
+    background-color: white;
+  }
+  #inCircle {
+    position: relative;
+    transform: translate(15%, 20%);
+    height: 70px;
+    width: 70px;
+    animation: fadeblinking 1s linear infinite;
+    -webkit-animation: fadeblinking 2500ms linear infinite;
+  }
+
+  @keyframes fadeblinking {
+    0%, 100% {
+      background-color: blue;
+    }
+    50% {
+      background-color: white;
+    }
+  }
+  @-webkit-keyframes fadeblinking {
+    0%, 100% {
+      color: blue;
+    }
+    100% {
+      color: white;
+    }
+  }
+
+}
