@@ -1,5 +1,7 @@
+import { getJson } from './utilities.js';
+
 // This is the base URL
-const url = 'https://pokeapi.co/api/v2/'
+const url = 'https://pokeapi.co/api/v2/';
 
 // Main code execution on load...
 
@@ -15,22 +17,6 @@ function init() {
   myList.then(data => {
     buildList(data);
     buildButtons(data);
-  });
-}
-
-
-function getJson(url) {
-  return fetch(url)
-  .then(response => {
-    if (response.ok) {
-      console.log('in then', response);
-      return response.json();
-    } else {
-      throw new Error('JSON retrieval failed!');
-      console.log('Will not run.');
-    }
-  }).catch(err => {
-    console.log(err);
   });
 }
 
@@ -137,6 +123,8 @@ function showOnePoke(pokeURL) {
   })
 }
 
+
+// Public functions...
 function showType(typeExt) {
   if (typeExt !== "") {
     // "Nuke" buttons
@@ -161,3 +149,18 @@ function showType(typeExt) {
     return false;
   }
 }
+
+function search() {
+  const pokeName = document.getElementById('pokeName').value;
+  const pokeIndiv = getJson(url + 'pokemon/' + pokeName);
+
+  pokeIndiv.then(result => {
+    console.log(result);
+  });
+}
+
+// Public function... May look to revise using MVC
+window.showType = showType;
+window.search = search;
+
+init();

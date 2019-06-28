@@ -15,6 +15,17 @@
     font-smooth: never;
     font-size: 10px;
     background-color: #f22613;
+    min-height: 100%;
+    border: 20px solid #a42013;
+  }
+  html {
+    height: 96%;
+  }
+  .searchOptions {
+    width: 70%;
+  }
+  .circContainer {
+    width: 30%;
   }
   #list {
     list-style: none;
@@ -85,13 +96,14 @@
   #outCircle {
     left: 2em;
     height: 95px;
-    width: 200px;
-    margin-right: 50px; margin-left: 50px;
+    width: 95px;
+    margin-left: 50px;
+    transform: translate(20%, 20%);
     background-color: white;
   }
   #inCircle {
     position: relative;
-    transform: translate(15%, 20%);
+    transform: translate(20%, 20%);
     height: 70px;
     width: 70px;
     animation: fadeblinking 1s linear infinite;
@@ -114,5 +126,4 @@
       color: white;
     }
   }
-
 }
