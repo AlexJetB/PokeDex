@@ -8,74 +8,126 @@
   /* There is no SVG version of this font due to support being dropped in SVG 2 */
 }
 
-@media only screen {
+/*Desktops...*/
+@media only screen and (min-width : 1224px){
   body {
     font-family: 'pokemon-font', monospace;
+    font-size: 10px;
     -webkit-font-smoothing: none;
     font-smooth: never;
-    font-size: 10px;
     background-color: #f22613;
-    min-height: 100%;
-    border: 20px solid #a42013;
+    height: 40em;
+    width: 20em;
+    margin: auto;
+  }
+
+  .circContainer {
+    width: 10%;
+  }
+}
+
+/*iPads*/
+
+/*Mobile...*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  body {
+    font-family: 'pokemon-font', monospace;
+    font-size: 10px;
+    -webkit-font-smoothing: none;
+    font-smooth: never;
+    background-color: #f22613;
+    min-height: 94%;
+    border: 10px solid #a42013;
+    position: fixed;
   }
   html {
-    height: 96%;
+    height: 92%;
   }
   .searchOptions {
-    width: 70%;
+    width: 100%;
   }
   .circContainer {
     width: 30%;
   }
-  #list {
-    list-style: none;
+  #pokeView {
     background-color: #d2d7d3;
     margin: auto;
-    height: 70%;
+    height: 58vh;
     width: 80%;
-    border: 10px solid black;
+    border: 5px solid black;
     border-radius: 10px;
+    /* font-size: 1rem; */
+    overflow-y: scroll;
   }
-  #list > li {
-    padding: 0.5rem 0 0.5rem 0;
-    font-size: 30px; /*has to be in pixels due to font limitations*/
+
+  .ability {
+    padding: 0.2rem;
+    color: #d2d7d3;
+    background-color: #2e3131;
+  }
+
+  .statBox {
+    width 100%;
+    height: 39vh;
+    overflow-y: scroll;
+  }
+
+  #sprite {
+    width: 50%;
+    vertical-align: middle;
+    padding-left: 25%;
+  }
+  #list {
+    padding-left: 10px;
+    list-style: none;
+  }
+  #list > li, #indiv {
+    padding: 0 0.4rem 0.2rem 0.4rem;
+    font-size: 1em; /*has to be in pixels due to font limitations*/
     width: 90%;
   }
-  #list > li:active {
+  #list > li:hover {
     background-color: #2e3131;
     color: #d2d7d3;
   }
   input, button, select {
     font-family: 'pokemon-font', monospace;
     width:70%;
-    font-size: 30px;
+    font-size: 1em;
   }
   option {
-    font-size: 10px;
+    font-size: 1em;
     height: 10px;
   }
   .flex, p {
-    font-size: 30px;
+    font-size: 1em;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-top: 2em;
-    width: 80%;
+    margin-top: 1em;
+    width: 100%;
   }
   p {
     margin-left: 2em;
   }
+  p.indiStat {
+    margin: 0 0 0 0;
+  }
+  h5 {
+    margin-bottom: none;
+  }
   .flexCenter {
-    font-size: 30px;
+    font-size: 1em;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     margin: auto;
-    margin-top: 2em;
+    margin-top: 1em;
     width: 80%;
   }
+
   .flexCenter > button {
     font-family: 'pokemon-font', monospace;
     padding: 1em;
@@ -92,20 +144,27 @@
   .circle {
     border-radius: 50%;
   }
+  .indBttn {
+    border: none;
+    background-color: #387d32;
+  }
+  .indBttn:hover {
+    background-color: #8cd53d;
+  }
   /* Draw with Canvas.... */
   #outCircle {
-    left: 2em;
-    height: 95px;
-    width: 95px;
-    margin-left: 50px;
-    transform: translate(20%, 20%);
+    margin-left: 10px;
+    left: 1em;
+    height: 40px;
+    width: 40px;
+    transform: translate(20%, 5%);
     background-color: white;
   }
   #inCircle {
     position: relative;
-    transform: translate(20%, 20%);
-    height: 70px;
-    width: 70px;
+    transform: translate(18%, 18%);
+    height: 30px;
+    width: 30px;
     animation: fadeblinking 1s linear infinite;
     -webkit-animation: fadeblinking 2500ms linear infinite;
   }

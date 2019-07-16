@@ -12,3 +12,12 @@ export function getJson(url) {
     console.log(err);
   });
 }
+
+export function nukeButtons() {
+  let nextButton = document.getElementById('nextButton'),
+      nextClone = nextButton.cloneNode(true);
+  let prevButton = document.getElementById('prevButton'),
+      prevClone = prevButton.cloneNode(true);
+  nextButton.parentNode.replaceChild(nextClone, nextButton);
+  prevButton.parentNode.replaceChild(prevClone, prevButton);
+}

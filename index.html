@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pokedex</title>
+    <link rel="stylesheet" type="text/css" href="css/pokemon-font-1.8.1/css/pokeStyle.css">
+  </head>
+  <body>
+    <div class="flex">
+      <div class="circContainer">
+        <div id="outCircle" class="circle">
+          <div id="inCircle" class="circle">
+          </div>
+        </div>
+      </div>
+      <div class="searchOptions">
+          <span>Search by... </span><br>
+          Name:<br><input type="text" id="pokeName" placeholder="pokemon name">
+          <br>
+          Type:<br><select id="typeSelect">
+            <option value=''>Select Type</option>
+          </select>
+      </div>
+    </div>
+    <p style="color:white;">Pokemon:</p>
+    <div id="pokeView">
+      <div id='indiv' style="display:none">
+        <div id='sprite'>
+        </div>
+        <div id='stats'>
+        </div>
+      </div>
+      <ul id='list'>
+      </ul>
+    </div>
+
+    <div class="flexCenter" id="nav1">
+      <button id="prevButton">PREV</button>
+      <button id="nextButton">NEXT</button>
+    </div>
+    <div class="flexCenter" id="nav2" style="display: none">
+      <button id="backButton">BACK</button>
+      <button id="viewButton">VIEW</button>
+    </div>
+  </body>
+  <script type="module" src="js/pokeController.js">
+  </script>
+</html>
