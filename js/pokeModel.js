@@ -7,26 +7,7 @@ export default class PokeModel {
     this.pagStart = 0;
     this.pagEnd = 0;
   }
-
-  search() {
-    nukeButtons();
-
-    const pokeName = document.getElementById('pokeName').value.toLowerCase();
-    myPokeModel.resultArray = myPokeModel.searchArray.filter(function(item) {
-      const pokeName = document.getElementById('pokeName').value.toLowerCase();
-      const regex = new RegExp(pokeName, "g");
-
-      if (item.name.match(regex)) {
-        return item;
-      }
-    });
-
-    console.log(myPokeModel.resultArray);
-
-    buildList(myPokeModel.resultArray, true, 0, 10);
-    buildButtons(myPokeModel.resultArray, true, 0, 10);
-  }
-
+  
   buildPokeArray(data, whole) {
     if (whole === true) {
       return data.results.map(function (item) {

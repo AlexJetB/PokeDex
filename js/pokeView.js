@@ -54,7 +54,16 @@ async function showOnePoke(pokeURL) {
 
   const indiEntry = getJson(pokeURL);
 
-  indiEntry.then(data => {
+  indiEntry.then(async function(data){
+    const descRep = getJson(data.species.url);
+    let description = ' ';
+    await descRep.then(result => {
+      result.flavor_text_entries.find(entry => {
+        if (entry.language.name === "en") {
+          description = entry.flavor_text;
+        }
+      });
+    })
     indiv.innerHTML = `<div class="spriteBox">
     <img src="${data.sprites.front_default}" id="sprite">
     </div>
@@ -62,6 +71,7 @@ async function showOnePoke(pokeURL) {
     <h4>Pokemon: <span id="shBool"></span>
     ${toUpper(data.name)}
     <span id="pokeGend">♂/♀</span></h4>
+    <h4>${description}</h4>
     <h4>Type: ${data.types.map(ind => ind.type.name).join(', ')}</h4>
     <h4>Base stats:</h4>
     ${data.stats.map(ind => `<h4>${toUpper(ind.stat.name)}: ${ind.base_stat}
@@ -77,11 +87,15 @@ async function showOnePoke(pokeURL) {
         const abiDescript = getJson(ind.ability.url);
         abiDescript.then(desc => {
           console.log(desc.effect_entries[0]);
-          let p = document.createElement('p');
-          p.innerHTML = desc.effect_entries[0].effect;
-          this.parentNode.appendChild(p);
+          if (this.parentNode.childElementCount === 2) {
+            this.parentNode.removeChild(this.parentNode.childNodes[1]);
+          } else {
+            let p = document.createElement('p');
+            p.innerHTML = desc.effect_entries[0].effect;
+            this.parentNode.appendChild(p);
+          }
         });
-      })
+      });
     });
     const spriteArray = objToArray(data.sprites);
     spriteNum.num = 0;

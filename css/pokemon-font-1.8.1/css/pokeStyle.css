@@ -36,6 +36,7 @@
     -webkit-font-smoothing: none;
     font-smooth: never;
     background-color: #f22613;
+    width: 90%;
     min-height: 94%;
     border: 10px solid #a42013;
     position: fixed;
@@ -106,7 +107,7 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 1em;
-    width: 100%;
+    width: 90%;
   }
   p {
     margin-left: 2em;
